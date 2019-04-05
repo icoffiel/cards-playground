@@ -6,14 +6,10 @@ enum class DeckType {
     STANDARD
 }
 
-interface DeckFactory {
-    fun create(deckType: DeckType) : Deck
-}
+class DeckFactory {
 
-class StandardDeckFactory {
-
-    companion object : DeckFactory {
-        override fun create(deckType: DeckType): Deck =
+    companion object {
+        fun create(deckType: DeckType): Deck =
                 when(deckType) {
                     DeckType.STANDARD -> standardDeck()
 
